@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ROCDetailsForm = () => {
+const ROCDetailsForm = ({ onLogout }) => {
   
   const [formData, setFormData] = useState({
     companyName: '',
@@ -234,7 +234,23 @@ const ROCDetailsForm = () => {
 
   return (
     <div style={formStyles.container}>
-      <h1 style={formStyles.title}>ROC Details Entry </h1>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+        <h1 style={formStyles.title}>ROC Details Entry</h1>
+        <button 
+          onClick={onLogout} 
+          style={{
+            padding: '8px 16px',
+            backgroundColor: '#dc3545',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontWeight: 'bold'
+          }}
+        >
+          Logout
+        </button>
+      </div>
       
       <form onSubmit={handleSubmit}>
         {/* Basic Company Information */}
